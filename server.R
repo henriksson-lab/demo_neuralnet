@@ -1,5 +1,6 @@
 library(plotly)
 library(Cairo)
+library(neuralnet)
 options(shiny.usecairo=T)
 
 
@@ -81,7 +82,6 @@ server <- function(input, output, session) {
   ###### native R lib. lacks convergence plots etc
   solveNetNNlib <- function(){
     
-    library(neuralnet)
     
     thedat <- getDataTable()
     all_param_name <- colnames(thedat)[colnames(thedat) != input$input_predict]
